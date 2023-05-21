@@ -165,8 +165,40 @@ end()	매치된 문자열의 끝 위치를 리턴한다.
 
 span()	매치된 문자열의 (시작, 끝)에 해당하는 튜플을 리턴한다.
 
-
-
+#Example questions
+<code>
+    import re
+</code>
+    <b>기본</b>
+<code>    
+    text = 'abc'
+    regex = re.compile('[d]')
+    matchobj = regex.match(text)
+    print(matchobj)
+</code>
+    <b>기본2</b>
+<code>
+    text = 'bed'
+    regex = re.compile('[a-c]')
+    matchobj = regex.match(text)
+    print(matchobj)
+</code>
+    <b>문자열 대체</b>
+<code>
+    text = 'My Life is too short'
+    replace = 'leg'
+    regex = re.compile(r'^Life')
+    result = re.sub(regex, replace, text)
+    print(result)
+</code>
+    <b>전화번호 발췌</b>
+<code>
+    text = '우리집 전화번호는 031-397-7319 입니다.'
+    regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
+    matchobj = regex.search(text)
+    tellnum = matchobj.group()
+    print(tellnum)
+</code>
 
 
 자료 출처 : https://wikidocs.net/4308#mn
